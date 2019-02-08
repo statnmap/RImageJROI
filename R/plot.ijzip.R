@@ -7,6 +7,7 @@
 ##' @param ylab a title for the y axis: see \code{\link{title}}.
 ##' @param asp numeric defining the aspect ratio y/x: see \code{\link{plot.window}}. Defaults to 1.
 ##' @param ... Arguments to be passed to methods, such as graphical parameters (see \code{\link{par}}).
+##' @importFrom graphics plot axis
 ##' @details The function loops \code{\link{plot.ijroi}} plotting function over all elements in \code{x}. See \code{plot.ijroi} for further details.
 ##' @author Mikko Vihtakari, David Sterratt
 ##' @seealso \code{\link{read.ijzip}}, \code{\link{plot.ijroi}}
@@ -20,8 +21,10 @@
 plot.ijzip <- function(x, add=FALSE, xlab = "", ylab = "", main = "", asp = 1, ...) {
 
 ## Base plot
-    if (!add) {
-plot(NA, NA, xlim=range(unlist(lapply(x, function(i) i$xrange)), na.rm = TRUE), ylim=range(unlist(lapply(x, function(i) i$yrange)), na.rm = TRUE), axes = FALSE, xlab = xlab, ylab = ylab, main = main, asp = asp)
+    if (!isTRUE(add)) {
+plot(NA, NA, xlim = range(unlist(lapply(x, function(i) i$xrange)), na.rm = TRUE),
+     ylim = range(unlist(lapply(x, function(i) i$yrange)), na.rm = TRUE), 
+     axes = FALSE, xlab = xlab, ylab = ylab, main = main, asp = asp)
     }
 
 lapply(x, function(i) {tmp <- i

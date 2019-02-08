@@ -5,6 +5,7 @@
 #' @param names Logical, indicating whether the ROI file names should be used as names for the elements in the list (see Return). If FALSE a sequence of names specifying the type of ROI is automatically generated.
 #' @param list.files logical, indicating whether a data.frame of ROI files in \code{file} should be returned instead of a list of results. Defaults to FALSE. If TRUE equals to \code{unzip(file, list = TRUE)}.
 #' @param verbose Whether to report information (see \code{\link{read.ijroi}}).
+#' @importFrom utils unzip
 #' @return An object of class \code{ijzip} containing a list of the coordinates and types of ImageJ ROIs. Each element is named after option specified in \code{names}.
 #' @author Mikko Vihtakari
 #' @seealso \code{\link{read.ijroi}}, \code{\link{plot.ijzip}}.

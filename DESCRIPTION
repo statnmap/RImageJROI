@@ -12,9 +12,13 @@ Authors@R: c(person("David C", "Sterratt", role=c("aut", "cph", "cre"),
 Depends:
     R (>= 3.0.2)
 Imports:
-    spatstat
+    graphics,
+    spatstat,
+    utils
 Suggests:
     png,
     testthat
 License: GPL-3
 LazyData: true
+RoxygenNote: 6.1.1
+Encoding: UTF-8
