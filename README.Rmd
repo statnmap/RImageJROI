@@ -55,7 +55,8 @@ plot(roi_zip_sf)
 
 Build and read the vignette included in the package.
 ```{r, eval=FALSE}
-remotes::install_github("statnmap/RImageJROI", vignettes = TRUE)
+remotes::install_github("statnmap/RImageJROI", 
+                         build_opts = c("--no-resave-data", "--no-manual"))
 vignette("read-roi", package = "RImageJROI")
 ```
 

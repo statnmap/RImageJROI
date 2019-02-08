@@ -4,6 +4,7 @@ usethis::use_test("ij_as_sf")
 
 # Documentation ----
 usethis::use_readme_rmd()
+usethis::use_news_md()
 usethis::use_vignette("read-roi")
 
 # Dependencies ----

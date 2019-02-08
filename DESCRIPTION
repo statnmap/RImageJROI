@@ -1,7 +1,6 @@
 Package: RImageJROI
 Title: Read 'ImageJ' Region of Interest (ROI) Files
-Version: 0.1.1
-Date: 2015-05-07
+Version: 0.2.1
 Authors@R: 
     c(person(given = "David C",
              family = "Sterratt",
@@ -10,11 +9,16 @@ Authors@R:
       person(given = "Mikko",
              family = "Vihtakari",
              role = c("aut", "cph"),
-             email = "mikko.vihtakari@uit.no"))
+             email = "mikko.vihtakari@uit.no"),
+      person(given = "Sébastien",
+             family = "Rochette",
+             role = c("aut"),
+             email = "sebastienrochettefr@gmail.com",
+             comment = c(ORCID = "0000-0002-1565-9313")))
 Description: Provides functions to read 'ImageJ'
     (http://imagej.nih.gov/ij/) Region of Interest (ROI) files, to plot
     the ROIs and to convert them to 'spatstat' (http://spatstat.org/)
-    spatial patterns.
+    spatial patterns or 'sf' spatial objects.
 License: GPL-3
 URL: https://github.com/davidcsterratt/RImageJROI
 Depends:

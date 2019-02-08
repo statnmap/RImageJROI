@@ -39,13 +39,6 @@ This allows to use tools made for spatial data analyses available for roi object
 
 ``` r
 roi_zip_sf <- ij_as_sf(roi_zip)
-#> [1] 1
-#> [1] 2
-#> [1] 3
-#> [1] 4
-#> [1] 5
-#> [1] 6
-#> [1] 7
 roi_zip_sf
 #> Simple feature collection with 7 features and 1 field
 #> geometry type:  GEOMETRY
@@ -72,6 +65,7 @@ Further documentation
 Build and read the vignette included in the package.
 
 ``` r
-remotes::install_github("statnmap/RImageJROI", vignettes = TRUE)
+remotes::install_github("statnmap/RImageJROI", 
+                         build_opts = c("--no-resave-data", "--no-manual"))
 vignette("read-roi", package = "RImageJROI")
 ```
