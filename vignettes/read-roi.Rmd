@@ -1,0 +1,67 @@
+---
+title: "Read and manipulate ROI from ImageJ/Fiji"
+author: "Sébastien Rochette"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Read and manipulate ROI from ImageJ/Fiji}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  out.width = "100%",
+  fig.width = 8,
+  fig.height = 5
+)
+```
+
+# Read and manipulate ROI from ImageJ/Fiji
+## Read files
+
+- Read roi files
+```{r}
+library(RImageJROI)
+# type 2 'oval' ROIs are plotted using polygon()
+file <- system.file("extdata", "ijroi", "oval.roi", package = "RImageJROI")
+roi <- read.ijroi(file)
+```
+
+- Read roi zip file
+```{r}
+file <- system.file("extdata", "ijroi", "ijzip.zip", package = "RImageJROI")
+roi_zip <- read.ijzip(file)
+```
+
+## Plot roi files
+
+```{r}
+par(mfrow = c(1,2))
+plot(roi, col = "red")
+plot(roi_zip)
+```
+
+## Transform roi as sf object
+
+This allows to use tools made for spatial data analyses available for roi objects.
+This maybe useful for image data analyses.
+
+### For one roi
+```{r}
+roi_sf <- ij_as_sf(roi)
+roi_sf
+plot(roi_sf)
+```
+
+### For collection of roi
+```{r}
+roi_zip_sf <- ij_as_sf(roi_zip)
+roi_zip_sf
+plot(roi_zip_sf)
+```
+
+
+

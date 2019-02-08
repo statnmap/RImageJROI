@@ -1,3 +1,7 @@
+^Meta$
+^doc$
+^README\.Rmd$
+^devstuff_history\.R$
 ^RImageJROI.*\.tar\.gz$
 ^RImageJROI.Rproj$
 ^.*\.Rproj$

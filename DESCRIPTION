@@ -1,24 +1,38 @@
 Package: RImageJROI
 Title: Read 'ImageJ' Region of Interest (ROI) Files
-Description: Provides functions to read 'ImageJ' (http://imagej.nih.gov/ij/)
-    Region of Interest (ROI) files, to plot the ROIs and to convert them to
-    'spatstat' (http://spatstat.org/) spatial patterns.
 Version: 0.1.1
-URL: https://github.com/davidcsterratt/RImageJROI
 Date: 2015-05-07
-Authors@R: c(person("David C", "Sterratt", role=c("aut", "cph", "cre"),
-    email="david.c.sterratt@ed.ac.uk"), person("Mikko", "Vihtakari",
-    role=c("aut", "cph"), email="mikko.vihtakari@uit.no"))
+Authors@R: 
+    c(person(given = "David C",
+             family = "Sterratt",
+             role = c("aut", "cph", "cre"),
+             email = "david.c.sterratt@ed.ac.uk"),
+      person(given = "Mikko",
+             family = "Vihtakari",
+             role = c("aut", "cph"),
+             email = "mikko.vihtakari@uit.no"))
+Description: Provides functions to read 'ImageJ'
+    (http://imagej.nih.gov/ij/) Region of Interest (ROI) files, to plot
+    the ROIs and to convert them to 'spatstat' (http://spatstat.org/)
+    spatial patterns.
+License: GPL-3
+URL: https://github.com/davidcsterratt/RImageJROI
 Depends:
     R (>= 3.0.2)
 Imports:
+    dplyr,
     graphics,
+    magrittr,
+    sf,
     spatstat,
     utils
 Suggests:
+    knitr,
     png,
+    rmarkdown,
     testthat
-License: GPL-3
+VignetteBuilder: 
+    knitr
+Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
-Encoding: UTF-8

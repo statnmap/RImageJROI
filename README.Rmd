@@ -1,0 +1,61 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+# RImageJROI
+
+The goal of RImageJROI is to read 'Fiji/ImageJ' Region of Interest (ROI) Files.
+
+## Installation
+
+You can install the released version of RImageJROI from [CRAN](https://CRAN.R-project.org) with:
+
+``` r
+install.packages("RImageJROI")
+```
+
+or dev version
+
+```{r, eval=FALSE}
+# install.packages("remotes")
+remotes::install_github("statnmap/RImageJROI")
+```
+
+## Example
+
+- Read roi zip file
+```{r}
+library(RImageJROI)
+file <- system.file("extdata", "ijroi", "ijzip.zip", package = "RImageJROI")
+roi_zip <- read.ijzip(file)
+```
+
+## Transform roi as sf object
+
+This allows to use tools made for spatial data analyses available for roi objects.
+This maybe useful for image data analyses.
+
+```{r}
+roi_zip_sf <- ij_as_sf(roi_zip)
+roi_zip_sf
+plot(roi_zip_sf)
+```
+
+## Further documentation
+
+Build and read the vignette included in the package.
+```{r, eval=FALSE}
+remotes::install_github("statnmap/RImageJROI", vignettes = TRUE)
+vignette("read-roi", package = "RImageJROI")
+```
+

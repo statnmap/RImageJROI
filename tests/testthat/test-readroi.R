@@ -1,4 +1,4 @@
-path <- file.path(system.file(package = "RImageJROI"), "extdata", "ijroi")
+path <- system.file("extdata", "ijroi", package = "RImageJROI")
 
 context("Reading a rectangle")
 

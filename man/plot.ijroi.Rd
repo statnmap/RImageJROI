@@ -52,7 +52,7 @@ x <- read.ijroi(file)
 plot(x, border = "red") 
 
 # type 2 'oval' ROIs are plotted using polygon()
-file <- file.path(system.file(package = "RImageJROI"), "extdata", "ijroi", "oval.roi")
+file <- system.file("extdata", "ijroi", "oval.roi", package = "RImageJROI")
 x <- read.ijroi(file)
 plot(x, border = "red") 
 
